@@ -222,6 +222,28 @@ rss:
     - id: "geospatial-world"
       name: "Geospatial World (行业商业洞察)"
       url: "https://www.geospatialworld.net/feed/"
+
+    - id: "taibo-bidding"
+      name: "泰伯网 - 招标采购"
+      url: "https://rsshub.app/taibo/category/招标采购"
+      # 建议配合 TrendRadar 的必须词：卫星 OR 遥感
+
+    - id: "zghyb-satellite"
+      name: "中国政府采购网 - 卫星遥感搜索"
+      # 使用 RSSHub 动态生成搜索结果（以“卫星遥感”为关键词）
+      url: "https://rsshub.app/ccgp/search/卫星遥感"
+
+    - id: "bid-remote-sensing"
+      name: "招标监控 - 卫星遥感"
+      url: "https://rsshub.app/bidchance/search/卫星遥感"
+
+    - id: "bid-forest-monitoring"
+      name: "招标监控 - 森林监测/生物量"
+      url: "https://rsshub.app/bidchance/search/森林监测"
+
+    - id: "bid-insurance-rs"
+      name: "招标监控 - 农业保险遥感"
+      url: "https://rsshub.app/bidchance/search/农业保险遥感"
       
     # 自定义源示例
     # - id: "custom-feed"
