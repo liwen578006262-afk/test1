@@ -139,6 +139,57 @@ rss:
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
 
+    - id: "spacenews"
+      name: "SpaceNews (商业航天权威)"
+      url: "https://spacenews.com/feed/"
+      max_age_days: 3
+
+    - id: "satnews"
+      name: "SatNews (卫星产业动态)"
+      url: "https://news.satnews.com/feed/"
+
+    - id: "via-satellite"
+      name: "Via Satellite (卫星通信与应用)"
+      url: "https://www.satellitetoday.com/feed/"
+
+      - id: "nasa-earth"
+      name: "NASA Earth (地球科学新闻)"
+      url: "https://www.nasa.gov/rss/dyn/earth.rss"
+
+    - id: "sentinel-hub"
+      name: "Sentinel Hub (遥感开发与算法)"
+      url: "https://medium.com/feed/sentinel-hub"
+      max_age_days: 7  # 更新频率中等，保留时间长一点
+
+    - id: "gim-international"
+      name: "GIM International (测绘与测地学)"
+      url: "https://www.gim-international.com/news/rss"
+
+    - id: "planet-blog"
+      name: "Planet Blog (卫星应用案例)"
+      url: "https://www.planet.com/pulse/feed/"
+
+     - id: "36kr-aerospace"
+      name: "36氪-商业航天专栏"
+      url: "https://rsshub.app/36kr/search/article/商业航天"
+
+    - id: "taibo-satellite"
+      name: "泰伯网-卫星应用"
+      url: "https://rsshub.app/taibo/category/卫星应用"
+
+    - id: "wechat-space-news"
+      name: "中国航天报 (公众号抓取)"
+      url: "https://rsshub.app/wechat/msghistory/MP_W_2812239611" # 需确保你的 RSSHub 实例可用
+
+      - id: "arxiv-remote-sensing"
+      name: "ArXiv - 遥感与图像处理"
+      url: "http://export.arxiv.org/rss/eess.IV" # 涵盖图像与视频处理
+      max_age_days: 5
+
+    - id: "mdpi-rs"
+      name: "MDPI Remote Sensing (最新论文)"
+      url: "https://www.mdpi.com/rss/journal/remotesensing"
+      
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
