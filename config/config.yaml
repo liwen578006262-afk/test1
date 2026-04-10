@@ -79,8 +79,6 @@ platforms:
       name: "知乎"
     - id: "douban"
       name: "豆瓣"
-    - id: "_36kr"
-      name: "36氪"
     - id: "chongbuluo"
       name: "虫部落"
     - id: "fastbull"
@@ -189,6 +187,41 @@ rss:
     - id: "mdpi-rs"
       name: "MDPI Remote Sensing (最新论文)"
       url: "https://www.mdpi.com/rss/journal/remotesensing"
+
+    - id: "amazon-science"
+      name: "Amazon Science (包含大量地球观测 AI 论文)"
+      url: "https://www.amazon.science/index.rss"
+
+    - id: "deepmind-blog"
+      name: "DeepMind Blog (顶级 AI 研究动态)"
+      url: "https://deepmind.com/blog/feed/basic/"
+
+    - id: "ml-cmu"
+      name: "ML@CMU (卡内基梅隆机器学习博客)"
+      url: "https://blog.ml.cmu.edu/feed/"
+
+    - id: "towards-data-science"
+      name: "Towards Data Science (数据处理实战)"
+      url: "https://towardsdatascience.com/feed"
+
+    - id: "esa-news"
+      name: "ESA - 欧洲空间局"
+      url: "https://www.esa.int/rssfeed/Our_Activities/Space_Science"
+      max_age_days: 5
+
+    - id: "nasa-earth-obs"
+      name: "NASA Earth Observatory (遥感案例首选)"
+      url: "https://earthobservatory.nasa.gov/feeds/main.rss"
+      max_age_days: 7
+
+    - id: "space-dot-com"
+      name: "Space.com (综合航天动态)"
+      url: "https://www.space.com/feeds/all"
+      max_age_days: 7
+
+    - id: "geospatial-world"
+      name: "Geospatial World (行业商业洞察)"
+      url: "https://www.geospatialworld.net/feed/"
       
     # 自定义源示例
     # - id: "custom-feed"
