@@ -51,34 +51,20 @@ schedule:
 # sources: 平台列表
 #   - id: 平台唯一标识（勿修改）
 #   - name: 显示名称（可自定义，修改后不影响运行）
-# ===============================================================
+# ===============================================================          
 platforms:
-  enabled: true                         # 是否启用热榜平台抓取
+  enabled: true           # 是否启用热榜平台抓取
   sources:
     - id: "wallstreetcn-hot"
-      name: "华尔街见闻"
-    - id: "thepaper"
-      name: "澎湃新闻"
-    - id: "bilibili-hot-search"
-      name: "bilibili 热搜"
+      name: "华尔街见闻-航天军工"      # 侧重商业航天板块资本动向
     - id: "cls-hot"
-      name: "财联社热门"
+      name: "财联社-空天信息"        # 卫星产业链中标与政策快讯
     - id: "weibo"
-      name: "微博"
-    - id: "douyin"
-      name: "抖音"
+      name: "微博-航天热搜"          # 重大发射任务实时讨论
     - id: "zhihu"
-      name: "知乎"
-    - id: "chongbuluo"
-      name: "虫部落"
-    - id: "fastbull"
-      name: "金融1"
-    - id: "gelonghui"
-      name: "格隆汇"
-    - id: "juejin"
-      name: "稀土掘金"
-
-
+      name: "知乎-航空航天"          # 专家级技术深度解析
+    - id: "thepaper"
+      name: "澎湃-航天频道"          # 深度行业专题报道
 
 # ===============================================================
 # 3. 数据源 - RSS 订阅
@@ -89,8 +75,7 @@ platforms:
 # max_age_days: 可选，覆盖全局 freshness_filter.max_age_days
 # ===============================================================
 rss:
-  enabled: true                       # 是否启用 RSS 抓取
-
+  enabled: true            # 是否启用 RSS 抓取
   # 文章新鲜度过滤配置（全局默认值）
   # 过滤掉发布时间超过指定天数的旧文章，避免同一篇文章重复出现在推送中
   #
@@ -102,137 +87,73 @@ rss:
   #    - 所有文章都会存入数据库（MCP Server 的 AI 查询仍可访问）
   #    - 只有新鲜的文章会被推送到通知渠道
   freshness_filter:
-    enabled: true                     # 是否启用新鲜度过滤（默认启用）
+    enabled: true            # 是否启用新鲜度过滤（默认启用）
+    max_age_days: 3                   # 建议设置为3天，确保不漏掉长假期间的发射消息
 
-    max_age_days: 2                   # 最大文章年龄（天）
-                                      # - 正整数：只推送 N 天内的文章
-                                      # - 0：禁用过滤，推送所有文章
-
-  # 单个 feed 可配置 max_age_days 覆盖全局设置：
-  # - 不配置：使用全局 freshness_filter.max_age_days（默认 3 天）
-  # - 正整数：覆盖全局设置，只推送此天数内的文章
-  # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
-    - id: "hacker-news"
-      name: "Hacker News"
-      url: "https://hnrss.org/frontpage"
+    # --- 1. 权威官媒：重大发射、政策发布与国家队动态 ---
+    - id: "xinhua-space"
+      name: "新华网-宇宙航天"
+      url: "https://rsshub.app/xinhuanet/tech/yzht"
+    - id: "cctv-tech"
+      name: "央视网-科技航天"
+      url: "https://rsshub.app/cctv/tech"
+    - id: "people-science"
+      name: "人民网-科普/航天"
+      url: "https://rsshub.app/people/science"
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      enabled: false                  # 禁用
-      # max_age_days: 3               # 示例：推送 3 天内的文章（更新较慢的博客）
-     
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-
-    - id: "spacenews"
-      name: "SpaceNews (商业航天权威)"
-      url: "https://spacenews.com/feed/"
-      max_age_days: 3
-
-    - id: "satnews"
-      name: "SatNews (卫星产业动态)"
-      url: "https://news.satnews.com/feed/"
-
-    - id: "via-satellite"
-      name: "Via Satellite (卫星通信与应用)"
-      url: "https://www.satellitetoday.com/feed/"
-
-    - id: "nasa-earth"
-      name: "NASA Earth (地球科学新闻)"
-      url: "https://www.nasa.gov/rss/dyn/earth.rss"
-
-    - id: "sentinel-hub"
-      name: "Sentinel Hub (遥感开发与算法)"
-      url: "https://medium.com/feed/sentinel-hub"
-      max_age_days: 7  # 更新频率中等，保留时间长一点
-
-    - id: "gim-international"
-      name: "GIM International (测绘与测地学)"
-      url: "https://www.gim-international.com/news/rss"
-
-    - id: "planet-blog"
-      name: "Planet Blog (卫星应用案例)"
-      url: "https://www.planet.com/pulse/feed/"
-
-    - id: "36kr-aerospace"
-      name: "36氪-商业航天专栏"
-      url: "https://rsshub.app/36kr/search/article/商业航天"
-
-    - id: "taibo-satellite"
-      name: "泰伯网-卫星应用"
-      url: "https://rsshub.app/taibo/category/卫星应用"
-
+    # --- 2. 行业专业媒体：深度政策、学术前沿与技术细节 ---
     - id: "wechat-space-news"
-      name: "中国航天报 (公众号抓取)"
-      url: "https://rsshub.app/wechat/msghistory/MP_W_2812239611" # 需确保你的 RSSHub 实例可用
+      name: "中国航天报 (官方订阅)"      # CASC官方报纸
+      url: "https://rsshub.app/wechat/msghistory/MP_W_2812239611"
+    - id: "spacenews-global"
+      name: "SpaceNews (全球商业航天)"
+      url: "https://spacenews.com/feed/"
+    - id: "china-space-tech"
+      name: "《中国航天科技》杂志"
+      url: "https://rsshub.app/spacechina/news" # CASC新闻源
+    - id: "guancha-tech"
+      name: "观察者网-航天科技"
+      url: "https://rsshub.app/guancha/scitech"
 
-    - id: "arxiv-remote-sensing"
-      name: "ArXiv - 遥感与图像处理"
-      url: "http://export.arxiv.org/rss/eess.IV" # 涵盖图像与视频处理
-      max_age_days: 5
+    # --- 3. 国际视野：全球发射监控与地缘航天动态 ---
+    - id: "reuters-tech"
+      name: "Reuters - Space & Tech"
+      url: "https://www.reuters.com/arc/outboundfeeds/v1/article?facet.filter=section:technology&size=10&format=rss"
+    - id: "bbc-science-space"
+      name: "BBC - Science & Environment"
+      url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+    - id: "cnn-space"
+      name: "CNN - Space News"
+      url: "http://rss.cnn.com/rss/edition_space.rss"
+    - id: "cnbc-space-business"
+      name: "CNBC - Commercial Space"
+      url: "https://www.cnbc.com/id/19854910/device/rss/rss.html"
 
-    - id: "mdpi-rs"
-      name: "MDPI Remote Sensing (最新论文)"
-      url: "https://www.mdpi.com/rss/journal/remotesensing"
-
-    - id: "amazon-science"
-      name: "Amazon Science (包含大量地球观测 AI 论文)"
-      url: "https://www.amazon.science/index.rss"
-
-    - id: "deepmind-blog"
-      name: "DeepMind Blog (顶级 AI 研究动态)"
-      url: "https://deepmind.com/blog/feed/basic/"
-
-    - id: "ml-cmu"
-      name: "ML@CMU (卡内基梅隆机器学习博客)"
-      url: "https://blog.ml.cmu.edu/feed/"
-
-    - id: "towards-data-science"
-      name: "Towards Data Science (数据处理实战)"
-      url: "https://towardsdatascience.com/feed"
-
-    - id: "esa-news"
-      name: "ESA - 欧洲空间局"
-      url: "https://www.esa.int/rssfeed/Our_Activities/Space_Science"
-      max_age_days: 5
-
-    - id: "nasa-earth-obs"
-      name: "NASA Earth Observatory (遥感案例首选)"
-      url: "https://earthobservatory.nasa.gov/feeds/main.rss"
-      max_age_days: 7
-
-    - id: "space-dot-com"
-      name: "Space.com (综合航天动态)"
-      url: "https://www.space.com/feeds/all"
-      max_age_days: 7
-
-    - id: "geospatial-world"
-      name: "Geospatial World (行业商业洞察)"
-      url: "https://www.geospatialworld.net/feed/"
-
-    - id: "taibo-bidding"
-      name: "泰伯网 - 招标采购"
-      url: "https://rsshub.app/taibo/category/招标采购"
-      # 建议配合 TrendRadar 的必须词：卫星 OR 遥感
-
-    - id: "bid-radar"
-      name: "采招网-遥感"
-      url: "https://rsshub.app/bidchance/search/遥感"
-
-    - id: "bid-remote-sensing"
-      name: "招标监控 - 卫星遥感"
+    # --- 4. 资本与市场：卫星产业证券动向与招标监控 ---
+    - id: "stcn-mil-industry"
+      name: "证券时报-国防军工"
+      url: "https://rsshub.app/stcn/category/国防军工"
+    - id: "taibo-satellite"
+      name: "泰伯网-卫星/遥感"
+      url: "https://rsshub.app/taibo/category/卫星应用"
+    - id: "bid-radar-rs"
+      name: "招标监控-卫星遥感"
       url: "https://rsshub.app/bidchance/search/卫星遥感"
 
-    - id: "bid-forest-monitoring"
-      name: "招标监控 - 森林监测/生物量"
-      url: "https://rsshub.app/bidchance/search/森林监测"
+    # --- 5. 实时发射任务与遥感应用 ---
+    - id: "next-spaceflight"
+      name: "Next Spaceflight (发射计划)"
+      url: "https://nextspaceflight.com/rss/"
+    - id: "nasa-earth-obs"
+      name: "NASA Earth (遥感实战案例)"
+      url: "https://earthobservatory.nasa.gov/feeds/main.rss"
+      max_age_days: 7
+    - id: "mdpi-rs-journal"
+      name: "MDPI Remote Sensing (论文)"
+      url: "https://www.mdpi.com/rss/journal/remotesensing"
 
-    - id: "bid-insurance-rs"
-      name: "招标监控 - 农业保险遥感"
-      url: "https://rsshub.app/bidchance/search/农业保险遥感"
+
       
     # 自定义源示例
     # - id: "custom-feed"
