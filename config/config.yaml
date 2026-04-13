@@ -74,13 +74,13 @@ rss:
     # --- 1. 权威官媒：重大发射与国家队动态 ---
     - id: "xinhua-space"
       name: "新华网-宇宙航天"
-      url: "https://rsshub.app/xinhuanet/tech/yzht"
+      url: "https://rsshub.m1nus.top/xinhuanet/tech/yzht"
     - id: "cctv-tech"
       name: "央视网-科技航天"
-      url: "https://rsshub.app/cctv/tech"
+      url: "https://rsshub.m1nus.top/cctv/tech"
     - id: "people-science"
       name: "人民网-科普/航天"
-      url: "https://rsshub.app/people/science"
+      url: "https://rsshub.m1nus.top/people/science"
 
     # --- 2. 行业专业媒体：深度政策与技术细节 ---
     - id: "wechat-space-news"
