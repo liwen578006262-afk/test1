@@ -129,6 +129,25 @@ rss:
     - id: "mdpi-rs-journal"
       name: "MDPI Remote Sensing (论文)"
       url: "https://www.mdpi.com/rss/journal/remotesensing"
+
+    # 替换失败的新华网/央视，改用高稳定的国际官方源
+    - id: "esa-science"
+      name: "ESA - 空间科学"
+      url: "https://www.esa.int/rssfeed/Our_Activities/Space_Science"
+
+    - id: "nasa-breaking"
+      name: "NASA - 突发新闻"
+      url: "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+
+    # 替换 429 的 SpaceNews，改用 Phys.org 航天频道
+    - id: "phys-org-space"
+      name: "Phys.org (航天技术前沿)"
+      url: "https://phys.org/rss-feed/space-news/"
+
+    # 针对遥感应用，增加这个源（通常 GitHub Actions 访问很顺畅）
+    - id: "spatial-source"
+      name: "Spatial Source (地理信息系统)"
+      url: "https://www.spatialsource.com.au/feed/"
 # ===============================================================
 # 4. 报告模式
 #
