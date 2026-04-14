@@ -74,27 +74,27 @@ rss:
     # --- 1. 权威官媒：重大发射与国家队动态 ---
     - id: "xinhua-space"
       name: "新华网-宇宙航天"
-      url: "https://rsshub.m1nus.top/xinhuanet/tech/yzht"
+      url: "https://rss.shijun.me/xinhuanet/tech/yzht"
     - id: "cctv-tech"
       name: "央视网-科技航天"
-      url: "https://rsshub.m1nus.top/cctv/tech"
+      url: "https://rss.shijun.me/cctv/tech"
     - id: "people-science"
       name: "人民网-科普/航天"
-      url: "https://rsshub.m1nus.top/people/science"
+      url: "https://rss.shijun.me/people/science"
 
     # --- 2. 行业专业媒体：深度政策与技术细节 ---
     - id: "wechat-space-news"
       name: "中国航天报 (官方订阅)"
-      url: "https://rsshub.app/wechat/msghistory/MP_W_2812239611"
+      url: "https://rss.shijun.me/wechat/msghistory/MP_W_2812239611"
     - id: "spacenews-global"
       name: "SpaceNews (全球商业航天)"
       url: "https://spacenews.com/feed/"
     - id: "china-space-tech"
       name: "《中国航天科技》杂志"
-      url: "https://rsshub.app/spacechina/news"
+      url: "https://rss.shijun.me/spacechina/news"
     - id: "guancha-tech"
       name: "观察者网-航天科技"
-      url: "https://rsshub.app/guancha/scitech"
+      url: "https://rsshub.rssforever.com/guancha/scitech"
 
     # --- 3. 国际视野：全球监控与地缘航天 ---
     - id: "reuters-tech"
